@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+
+{% block content %} 
+
+<div>
+    <div>
+        <a href="{% url 'add_products' user_id=1 %}"> add products</a>
+        {% for prod in data %}
+            <h2><a href="{% url 'product' pk=prod.id %}">{{prod.name}}</a></h2>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

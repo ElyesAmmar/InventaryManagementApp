@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+{% block content %} 
+<div>
+    <a href="{{request.META.HTTP_REFERER}}">back</a>
+</div>
+<div>
+    <h3>{{data.name}}</h3>
+    <h3>{{data.price}}</h3>
+    <img src="{{data.image}}" alt="">
+</div>
+<div>
+    <h2><a href="{% url 'update_product' data.id %}">edit</a></h2>
+</div>
+<div>
+    <h2><a href="{% url 'delete_product' data.id %}">delete</a></h2>
+</div>
+
+{% endblock content %}
